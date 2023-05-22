@@ -1,0 +1,13 @@
+<h1>New Game</h1>
+<div class="fs-1 fw-bold bg-primary m-4 border border-4 text-center">
+<%= @letters.join(' ') %>
+</div>
+<form action="score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+
+  <label>Quel est le mot le plus long que tu puisses trouver ?
+    <input name="answer" autocomplete="name">
+  </label>
+  <button>Envoyé !</button>
+</form>
